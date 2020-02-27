@@ -35,18 +35,12 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<RetrofitUsers>>() {
 
             @Override
-
-            // Handle a successful response
             public void onResponse(@NonNull Call<List<RetrofitUsers>> call, @NonNull Response<List<RetrofitUsers>> response) {
                 loadDataList(response.body());
             }
 
             @Override
-
-            //Handle execution failures
             public void onFailure(@NonNull Call<List<RetrofitUsers>> call, @NonNull Throwable throwable) {
-
-                // If the request fails, then display the following toast
                 Toast.makeText(MainActivity.this, "Unable to load users", Toast.LENGTH_SHORT).show();
             }
         });
